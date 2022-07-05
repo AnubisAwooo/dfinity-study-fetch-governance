@@ -1,0 +1,71 @@
+[package]
+name = "fetcher"
+version = "0.0.1"
+edition = "2021"
+# [package] — 定义项目( package )的元信息
+# name — 名称
+# version — 版本
+# authors — 开发作者
+# edition — Rust edition.
+# rust-version — 支持的最小化 Rust 版本
+# description — 描述
+# documentation — 文档 URL
+# readme — README 文件的路径
+# homepage - 主页 URL
+# repository — 源代码仓库的 URL
+# license — 开源协议 License.
+# license-file — License 文件的路径.
+# keywords — 项目的关键词
+# categories — 项目分类
+# workspace — 工作空间 workspace 的路径
+# build — 构建脚本的路径
+# links — 本地链接库的名称
+# exclude — 发布时排除的文件
+# include — 发布时包含的文件
+# publish — 用于阻止项目的发布
+# metadata — 额外的配置信息，用于提供给外部工具
+# default-run — [cargo run] 所使用的默认可执行文件( binary )
+# autobins — 禁止可执行文件的自动发现
+# autoexamples — 禁止示例文件的自动发现
+# autotests — 禁止测试文件的自动发现
+# autobenches — 禁止 bench 文件的自动发现
+# resolver — 设置依赖解析器( dependency resolver)
+
+[lib]
+# 非 Rust 运行的库，不需要在最终目标代码中包含特定于 Rust 的内容。
+# 对于像这样的库，你需要在你的 Cargo.toml 中使用 cdylib crate 类型
+# 指明这个包需要被编译成 C 语言库（类似）。约束 lib 的类型
+crate-type = ["cdylib"]
+
+[dependencies]
+# IC的Canister开发者工具包
+# https://crates.io/crates/ic-cdk
+ic-cdk = "0.5.2"
+# 本包提供了属性宏？，可以在普通的 rust 函数上添加注解使之变成一个 canister 的公开接口。
+# https://crates.io/crates/ic-cdk-macros
+ic-cdk-macros = "0.5.2"
+# 序列化和反序列化框架
+# https://crates.io/crates/serde/1.0.137
+serde = "1.0.137"
+# IC上运行的Cnister之间交互使用的接口描述语言 本包是一个Candid的序列化反序列化库。可以用二进制或文本格式在Rust值和Candid之间进行无缝转换。
+# https://crates.io/crates/candid
+candid = "0.7.10"
+
+# Cargo Target 列表: (查看 Target 配置 获取详细设置)
+# [lib] — Library target 设置.
+# [[bin]] — Binary target 设置.  # TOML 的双括号表示，该键是个数组每次出现数组长度递增。换句话说，该值可以设置多组。
+# [[example]] — Example target 设置.
+# [[test]] — Test target 设置.
+# [[bench]] — Benchmark target 设置.
+
+# Dependency tables:
+# [dependencies] — 项目依赖包
+# [dev-dependencies] — 用于 examples、tests 和 benchmarks 的依赖包
+# [build-dependencies] — 用于构建脚本的依赖包
+# [target] — 平台特定的依赖包
+# [badges] — 用于在注册服务(例如 crates.io ) 上显示项目的一些状态信息，例如当前的维护状态：活跃中、寻找维护者、deprecated
+# [features] — features 可以用于条件编译
+# [patch] — 推荐使用的依赖覆盖方式
+# [replace] — 不推荐使用的依赖覆盖方式 (deprecated).
+# [profile] — 编译器设置和优化
+# [workspace] — 工作空间的定义

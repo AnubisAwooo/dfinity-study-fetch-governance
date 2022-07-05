@@ -1,1 +1,1 @@
-# dfinity-test-governance
+# dfinity-study-fetch-governance
