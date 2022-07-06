@@ -1,0 +1,12 @@
+type NeuronId = record { id : nat64 };
+type Proposal = record { url : text; title : opt text; summary : text };
+type ProposalInfo = record {
+  id : opt NeuronId;
+  topic : int32;
+  proposal : opt Proposal;
+};
+service : {
+  last_proposals : (nat32) -> (vec ProposalInfo);
+  last_proposals2 : () -> (vec ProposalInfo) query;
+  last_updated : () -> (nat64) query;
+}

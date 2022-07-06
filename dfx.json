@@ -3,7 +3,7 @@
         "fetcher": {
             "type": "rust",
             "package": "fetcher",
-            "candid": "canisters/fetcher/src/fetcher.did"
+            "candid": "canisters/fetcher/fetcher.did"
         }
     }
 }
