@@ -1,7 +1,11 @@
-use ic_cdk::export::{candid::CandidType, serde::Deserialize, serde::Serialize};
+use ic_cdk::export::{
+    candid::CandidType, // 标识是 candid 类型
+    serde::Deserialize, // 反序列化
+    serde::Serialize,   // 序列化
+};
 
-use std::borrow::Cow;
-use std::collections::HashMap; // Clone on Write 写时克隆功能
+use std::borrow::Cow; // Clone on Write 写时克隆功能
+use std::collections::HashMap;
 
 // 神经元 id  是个 64 位的数字吗？
 #[derive(CandidType, Deserialize, Clone, Serialize)]

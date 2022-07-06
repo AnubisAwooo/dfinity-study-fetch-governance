@@ -51,7 +51,7 @@ serde = "1.0.137"
 # https://crates.io/crates/candid
 candid = "0.7.10"
 
-serde_json = "*"
+serde_json = "1.0.82" # 序列化成 json 格式
 
 # Cargo Target 列表: (查看 Target 配置 获取详细设置)
 # [lib] — Library target 设置.
